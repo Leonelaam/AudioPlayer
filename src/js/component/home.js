@@ -6,7 +6,7 @@ export function Home() {
 
 	const [cancionActual, setCancionActual] = useState(0);
 
-	//
+	//botones para atras y delante
 	const cancionDetras = () => {
 		if (cancionActual >= 1) {
 			setCancionActual(cancionActual - 1);
@@ -36,6 +36,10 @@ export function Home() {
 	const pausarCancion = () => {
 		audioPlayer.current.pause();
 	};
+	//seleccionar cancion de la lista
+	const seleccionar = idUnico => {
+		setCancionActual(idUnico);
+	};
 	//obtener lista de canciones
 	useEffect(() => {
 		getPlayList();
@@ -55,6 +59,9 @@ export function Home() {
 					{playlist.map((e, i) => {
 						return (
 							<li
+								onClick={() => {
+									seleccionar(i);
+								}}
 								key={i}
 								className={
 									cancionActual === i ? "reproduciendo" : ""

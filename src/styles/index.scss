@@ -23,6 +23,10 @@ li{
     text-align: center;
 }
 
+li:hover{
+    cursor: pointer;
+}
+
 button{
     color: white;
     background: black;
@@ -35,5 +39,5 @@ button{
     top: 350px;
 }
 .reproduciendo{
-    background-color: red
+    color: blue;
 }
